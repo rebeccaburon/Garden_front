@@ -1,4 +1,4 @@
-const URL = "http://localhost:7000/api";
+const URL = "";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -46,7 +46,7 @@ object when you do)*/
   const fetchTrips = () => {
     const options = makeOptions('GET', true);
     
-    return fetch(`${URL}/trips`, options)
+    return fetch(`${URL}/`, options)
     .then(handleHttpErrors);
   };
 

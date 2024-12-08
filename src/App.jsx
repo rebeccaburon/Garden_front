@@ -37,16 +37,16 @@ function App(login) {
   const [plants, setPlants] = useState([]);
   const navigate = useNavigate();
 
-  const APIURL = "http://localhost:7000/api/plants";
+  // const APIURL = "";
 
   //Fetch data
-  const getAllPlatns = (callback) => {
-    fetchData(APIURL, callback);
-  };
+  //const getAllPlatns = (callback) => {
+//    fetchData(APIURL, callback);
+ // };
 
-  useEffect(() => {
-    getAllPlatns((data) => setPlants(data));
-  }, []);
+ // useEffect(() => {
+ //   getAllPlatns((data) => setPlants(data));
+ // }, []);
 
   //Fetch token
   useEffect(() => {
