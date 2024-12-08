@@ -1,0 +1,279 @@
+/* General styles */
+body {
+    margin: 0;
+    font-family: 'Georgia', serif;   
+    line-height: 1.6;
+    background-color: #006400;
+    color: #0c0c0c;
+  }
+  
+h1 {
+  text-align: center;
+  color: #331f0a;
+  margin-top: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+}
+p {
+  text-align: justify; 
+  color: #444; 
+  margin: 10px 20px; 
+  font-size: 1.2rem; 
+  line-height: 1.8; 
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif; 
+}
+
+
+
+  /* Container styling */
+  .container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header styling */
+  .header {
+    background-color: #5f9f52; 
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    height: 140px;
+    max-width: 200px;
+    
+    cursor: pointer;
+  
+    transition: transform 0.3s ease;
+  }
+  
+  .logo:hover {
+    transform: scale(1.1); /* Slight hover effect for elegance */
+  }
+  
+  /* Content styling */
+  .content {
+    display: flex;
+    flex: 1;
+    flex-direction:row;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  /* Sidebar navigation */
+  .sidebar {
+    width: 240px; /* Slightly wider for better spacing */
+    background-color: #4e3719;
+    padding: 1.5rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #D1B055; 
+    font-weight: bold;
+    padding: 0.7rem 1.2rem;
+    display: block;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .sidebar a:hover {
+    background-color: #5f9f52;
+    color: #fff;
+  }
+  
+  .sidebar a.active {
+    background-color: #FF9999;
+    color: #fff;
+  }
+  
+  /* Main content styling */
+  .main-content {
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer styling */
+  .footer {
+    background-color: #5f9f52;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+    font-size: 1rem;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  /* Breadcrumbs styling */
+  .breadcrumbs {
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 2rem;
+    background-color: #4e3719; 
+    border-radius: 6px;
+    font-size: 1rem;
+    display: flex;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .breadcrumbs ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .breadcrumbs li {
+    margin-right: 1rem;
+  }
+  
+  .breadcrumbs li::after {
+    content: '>';
+    margin-left: 1rem;
+    color: #331f0a;
+  }
+  
+  .breadcrumbs li:last-child::after {
+    content: '';
+  }
+  
+  .breadcrumbs a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  .breadcrumbs a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Header login button */
+  .login-button {
+    background-color: #4e3719; /* Softer coral for the button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    text-decoration: none; /* Remove underline from NavLink */
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #FF9999;
+  }
+  
+  /* Login page styling */
+  .login-container {
+    max-width: 450px;
+    margin: 100px auto;
+    padding: 30px;
+    background: #E6BE8A;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Softer shadow for elegance */
+    border-radius: 10px;
+  }
+  
+  .login-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #331f0a; 
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444444;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  
+
+
+/*-------------------- Table Design------------- */
+table {
+  width: 100%;
+  border-collapse: collapse; 
+  background-color: #fff; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+  border-radius: 15px; 
+  overflow: hidden; 
+  margin: 20px 0;
+}
+
+thead {
+  background-color: #006400;
+  color: #fcfcfc; 
+  font-weight: bold;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid #006400; 
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #F9F5F1; 
+}
+
+tbody tr:nth-child(even) {
+  background-color: #FFF; 
+}
+
+tbody tr:hover {
+  background-color: #D1B055; 
+  color: #fff; 
+}
+
+caption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #331f0a; 
+  margin-bottom: 15px;
+}
+
+
+
