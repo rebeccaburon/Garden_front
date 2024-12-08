@@ -36,17 +36,16 @@ function App(login) {
   const [userRole, setUserRole] = useState("");
   const [plants, setPlants] = useState([]);
   const navigate = useNavigate();
-
-  // const APIURL = "";
+   const APIURL = "https://codebyburon.dk/api/plants";
 
   //Fetch data
-  //const getAllPlatns = (callback) => {
-//    fetchData(APIURL, callback);
- // };
+  const getAllPlatns = (callback) => {
+  fetchData(APIURL, callback);
+  };
 
- // useEffect(() => {
- //   getAllPlatns((data) => setPlants(data));
- // }, []);
+ useEffect(() => {
+   getAllPlatns((data) => setPlants(data));
+  }, []);
 
   //Fetch token
   useEffect(() => {

@@ -1,4 +1,4 @@
-const URL = "";
+const URL = "https://codebyburon.dk/api";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -8,9 +8,6 @@ function handleHttpErrors(res) {
 }
 
 function apiFacade() {
-  /* Insert utility-methods from later steps 
-here (REMEMBER to uncomment in the returned 
-object when you do)*/
 
   const setToken = (token) => {
     localStorage.setItem("jwtToken", token);
@@ -43,31 +40,12 @@ object when you do)*/
       });
   };
 
-  const fetchTrips = () => {
-    const options = makeOptions('GET', true);
-    
-    return fetch(`${URL}/`, options)
-    .then(handleHttpErrors);
-  };
-
-  const fetchGuides = () => {
-    const options = makeOptions("GET", true);
-    return fetch(`${URL}/guides`, options)
-    .then(handleHttpErrors);
-  };
-
-  const fetchTripDetails = (id) => {
-    const options = makeOptions("GET", true);
-    return fetch(`${URL}/trips/${id}`, options)
-    .then(handleHttpErrors);
-  };
 
   const fetchData = () => {
     const options = makeOptions ('GET', true);
     return fetch(URL, options)
     .then(handleHttpErrors);
   }
-
 
   
 
@@ -97,9 +75,6 @@ object when you do)*/
     loggedIn,
     login,
     logout,
-    fetchTrips,
-    fetchGuides,
-    fetchTripDetails,
     fetchData
     
   };
