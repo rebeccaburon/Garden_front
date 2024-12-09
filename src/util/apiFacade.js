@@ -1,4 +1,4 @@
-const URL = "https://gardenapp.codebyburon.dk/api";
+const URL = "https://codebyburon.dk/api/plants";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -43,7 +43,7 @@ function apiFacade() {
 
   const fetchData = () => {
     const options = makeOptions ('GET', true);
-    return fetch(URL, options)
+    return fetch(`${URL}/plants`, options)
     .then(handleHttpErrors);
   }
 
