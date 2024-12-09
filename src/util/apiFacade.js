@@ -43,7 +43,7 @@ function apiFacade() {
 
   const fetchData = () => {
     const options = makeOptions ('GET', true);
-    return fetch(URL + "/plants", options)
+    return fetch(URL, options)
     .then(handleHttpErrors);
   }
 
