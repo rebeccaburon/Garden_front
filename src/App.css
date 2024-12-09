@@ -54,7 +54,7 @@ p {
   }
   
   .logo:hover {
-    transform: scale(1.1); /* Slight hover effect for elegance */
+    transform: scale(1.1);
   }
   
   /* Content styling */
@@ -68,7 +68,7 @@ p {
   
   /* Sidebar navigation */
   .sidebar {
-    width: 240px; /* Slightly wider for better spacing */
+    width: 240px; 
     background-color: #4e3719;
     padding: 1.5rem;
     border-radius: 50px;
@@ -172,14 +172,14 @@ p {
   
   /* Header login button */
   .login-button {
-    background-color: #4e3719; /* Softer coral for the button */
+    background-color: #4e3719;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     border-radius: 6px;
-    text-decoration: none; /* Remove underline from NavLink */
+    text-decoration: none; 
     display: inline-block;
     text-align: center;
     transition: background-color 0.3s ease;
@@ -195,7 +195,7 @@ p {
     margin: 100px auto;
     padding: 30px;
     background: #E6BE8A;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Softer shadow for elegance */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); 
     border-radius: 10px;
   }
   

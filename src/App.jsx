@@ -36,7 +36,7 @@ function App(login) {
   const [userRole, setUserRole] = useState("");
   const [plants, setPlants] = useState([]);
   const navigate = useNavigate();
-   const APIURL = "https://codebyburon.dk/api/plants";
+   const APIURL = "https://gardenapp.codebyburon.dk/api";
 
   //Fetch data
   const getAllPlatns = (callback) => {

@@ -41,9 +41,9 @@ function ShowSortedPlants() {
 
   return (
     <>
-      <div style={{ margin: "20px" }}>
+      <div>
        
-        <Select id="plantType" value={selectedType} onChange={handleChange}>
+        <Select id="planttype" value={selectedType} onChange={handleChange}>
           {plantTypes.map((type) => (
             <option key={type} value={type}>
               {type}
