@@ -10,13 +10,13 @@ function Header({ loggedIn, username, handleLogout }) {
       <div className="auth-section">
         {!loggedIn ? (
           <NavLink to="/login" className="login-button">
-            Login
+            LOGIN
           </NavLink>
         ) : (
           <div className="user-controls">
             <p>Hello, {username} </p>
             <NavLink onClick={handleLogout} to="/" className="login-button">
-              Logout
+              LOGOUT
             </NavLink>
           </div>
         )}

@@ -91,21 +91,8 @@ function App(login) {
         username={username}
         handleLogout={handleLogout}
       />
-      <div className="content">
-        <nav className="sidebar">
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/plants">Plants</NavLink>
-            </li>
-            <li>
-              <NavLink to="/plantssorted">Plants Sorted By Type</NavLink>
-            </li>
-          </ul>
-        </nav>
-        <main className="main-content">
+      <div>
+        <main>
           <BreadCrumbs />
           <Outlet context={{ plants, handleLogin }} />
         </main>
