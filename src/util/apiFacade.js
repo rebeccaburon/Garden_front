@@ -1,53 +1,49 @@
-const URL = "https://codebyburon.dk/api/plants";
+const URL = "https://codebyburon.dk/api";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
-    return Promise.reject({ status: res.status, fullError: res.json() });
+    return res.json().then((fullError) => {
+      throw { status: res.status, fullError };
+    });
   }
   return res.json();
 }
 
 function apiFacade() {
-
   const setToken = (token) => {
     localStorage.setItem("jwtToken", token);
   };
+
   const getToken = () => {
     return localStorage.getItem("jwtToken");
   };
-  
-  const loggedIn = () => {
-    const loggedIn = getToken() != null;
-    return loggedIn;
-  };
-  
-  
+
+ const loggedIn = () => getToken() != null;
+
   const logout = () => {
     localStorage.removeItem("jwtToken");
   };
 
-  const login = (user, password) => {
-    //*TODO*/
+  const login = (username, password) => {
     const options = makeOptions("POST", false, {
-      username: user,
+      username: username,
       password: password,
     });
 
-    return fetch(URL + "/auth/login", options)
+    return fetch(`${URL}/auth/login`, options)
       .then(handleHttpErrors)
       .then((res) => {
+        if (!res.token) {
+          throw new Error("Token not returned from login response");
+        }
         setToken(res.token);
       });
   };
 
-
   const fetchData = () => {
-    const options = makeOptions ('GET', true);
-    return fetch(`${URL}/plants`, options)
-    .then(handleHttpErrors);
-  }
-
-  
+    const options = makeOptions("GET", true);
+    return fetch(`${URL}/plants`, options).then(handleHttpErrors);
+  };
 
   const makeOptions = (method, addToken, body) => {
     const opts = {
@@ -66,17 +62,13 @@ function apiFacade() {
     return opts;
   };
 
-  
-
   return {
-    makeOptions,
+    login,
+    fetchData,
     setToken,
     getToken,
     loggedIn,
-    login,
     logout,
-    fetchData
-    
   };
 }
 const facade = apiFacade();

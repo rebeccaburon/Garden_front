@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { useNavigate, useOutletContext } from 'react-router';
 import facade from '../util/apiFacade';
 
-function Login() {
-
-  const PageContainer = styled.div`
+const PageContainer = styled.div`
     position: relative;
     overflow: hidden;
     align-items: center;
@@ -28,22 +26,24 @@ function Login() {
   z-index: -1; /* Place behind content */
   pointer-events: none; /* Prevent interaction with the video */
 `;
+
+function Login() {
+
   const {handleLogin} = useOutletContext();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   
 
-  const handleSubmit = async (event) => {
+  const handleSubmit =  (event) => {
     event.preventDefault();
-    await handleLogin(username, password);
+    handleLogin(username, password);
     } 
 
 
   return (
     <PageContainer>
        <BackgroundVideo autoPlay loop muted playsInline>
-          <source src="home-screen-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </BackgroundVideo>
     <div className="login-container">
