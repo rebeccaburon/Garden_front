@@ -4,7 +4,7 @@ import App from './App.jsx'
 import { createBrowserRouter,createRoutesFromElements, Route, RouterProvider,} from "react-router-dom";
 import Home from './pages/Home.jsx'
 import Plants from './pages/Plants.jsx'
-import PlantsSortedByType from './pages/PlantsSortedByType.jsx'
+import Plant from './pages/Plant.jsx'
 import Login from './login_logout/Login.jsx'
 import Resellers from './pages/Resellers.jsx'
 const router = createBrowserRouter(
@@ -12,8 +12,8 @@ const router = createBrowserRouter(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
       <Route path="/plants" element={<Plants/>} />
+      <Route path="/plant" element={<Plant/>} />
       <Route path="/resellers" element={<Resellers/>} />
-      <Route path="/plantssorted" element={<PlantsSortedByType />} />
       <Route path='/login' element={<Login/>} />
     </Route>
   )

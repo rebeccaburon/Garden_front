@@ -124,6 +124,7 @@ p {
   /* Header login button */
   .login-button {
     background-color: #5D8072;
+    
     color: white;
     border: none;
     padding: 10px 20px;
