@@ -9,14 +9,14 @@ body {
   
 h1 {
   text-align: center;
-  color: #331f0a;
+  color: #c08b52;
   margin-top: 20px;
   font-size: 2rem;
   font-weight: bold;
 }
 p {
   text-align: justify; 
-  color: #d0d0d0; 
+  color: #c08b52; 
   margin: 10px 20px; 
   font-size: 1.2rem; 
   line-height: 1.8; 
@@ -31,18 +31,11 @@ p {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    align-items: center;
   }
   
   /* Header styling */
-  .header {
-    background-color: #A4D69E; 
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+
   
   .logo {
     height: 140px;
@@ -182,13 +175,15 @@ p {
 
 /*-------------------- Table Design------------- */
 table {
-  width: 100%;
+  width: 700px;
+  align-items: center;
   border-collapse: collapse; 
   background-color: #fff; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
   border-radius: 15px; 
   overflow: hidden; 
   margin: 20px 0;
+ 
 }
 
 thead {

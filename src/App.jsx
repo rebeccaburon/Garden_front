@@ -1,6 +1,6 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchData } from "./util/persistence";
+import { fetchData} from "./util/persistence";
 import { useNavigate } from "react-router-dom";
 import facade from "./util/apiFacade.js";
 import Header from "./components/Header.jsx";
@@ -37,15 +37,21 @@ function App(login) {
   const [plants, setPlants] = useState([]);
   const navigate = useNavigate();
    const APIURL = "https://codebyburon.dk/api/plants";
-
+ 
+ 
+ 
+ 
+ 
   //Fetch data
   const getAllPlatns = (callback) => {
   fetchData(APIURL, callback);
   };
 
- useEffect(() => {
-   getAllPlatns((data) => setPlants(data));
-  }, []);
+  useEffect(() => {
+    getAllPlatns((data) => setPlants(data));
+   }, []);
+
+
 
   //Fetch token
   useEffect(() => {
@@ -98,13 +104,13 @@ function App(login) {
   };
 
   return (
-    <div className="container">
+    <div >
       <Header
         loggedIn={loggedIn}
         username={username}
         handleLogout={handleLogout}
       />
-      <div>
+      <div className="container">
         <main>
           <BreadCrumbs />
           <Outlet context={{ plants, handleLogin }} />

@@ -6,14 +6,12 @@ import Home from './pages/Home.jsx'
 import Plants from './pages/Plants.jsx'
 import Plant from './pages/Plant.jsx'
 import Login from './login_logout/Login.jsx'
-import Resellers from './pages/Resellers.jsx'
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index element={<Home />} />
       <Route path="/plants" element={<Plants/>} />
       <Route path="/plant" element={<Plant/>} />
-      <Route path="/resellers" element={<Resellers/>} />
       <Route path='/login' element={<Login/>} />
     </Route>
   )

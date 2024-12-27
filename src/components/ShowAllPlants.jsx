@@ -1,6 +1,7 @@
 import { NavLink, useOutletContext } from "react-router-dom";
 import { useState } from "react";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const Select = styled.select`
   padding: 10px 15px;
@@ -29,7 +30,7 @@ function ShowAllPlants() {
   const { plants } = useOutletContext();
   const [selectedType, setSelectedType] = useState("All");
   const [selectedPlant, setSelectedPlant] = useState(null);
-
+  const navigate = useNavigate ();
   const plantTypes = ["All", "Flower", "Rose", "Bush", "Rhododendron", "Herb"];
 
   const sortedPlants =
@@ -44,6 +45,10 @@ function ShowAllPlants() {
   const handleSelectPlant = (plant) => {
     setSelectedPlant(plant);
   };
+
+  const handleClickBack = () => {
+    navigate ("/")
+  }
 
   return (
     <div>
@@ -83,7 +88,11 @@ function ShowAllPlants() {
           </div>
         </DetailsContainer>
       )}
+      <div>
+      <button className="login-button" onClick = {handleClickBack}>BACK </button>
+      </div>
     </div>
+  
   );
 }
 

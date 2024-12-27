@@ -44,6 +44,10 @@ function apiFacade() {
     const options = makeOptions("GET", true);
     return fetch(`${URL}/plants`, options).then(handleHttpErrors);
   };
+  const fetchDataReseller = () => {
+    const options = makeOptions("GET", true);
+    return fetch(`${URL}/resseller`, options).then(handleHttpErrors);
+  };
 
   const makeOptions = (method, addToken, body) => {
     const opts = {
@@ -69,6 +73,7 @@ function apiFacade() {
     getToken,
     loggedIn,
     logout,
+    fetchDataReseller,
   };
 }
 const facade = apiFacade();

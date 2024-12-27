@@ -4,7 +4,6 @@ import { Link, NavLink } from "react-router-dom";
 const PageContainer = styled.div`
 position: relative;
 overflow: hidden;
-width: 100%;
 height: 100vh; /* Ensure it covers the full screen height */
 display: flex;
 flex-direction: column;
@@ -20,10 +19,7 @@ text-align: center;
 
 const BackgroundVideo = styled.video`
 position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+
 object-fit: cover; /* Ensure video covers the screen */
 z-index: -1; /* Place behind content */
 pointer-events: none; /* Prevent interaction with the video */
@@ -38,13 +34,12 @@ margin-top: 20px;
 `;
 
 const GalleryImg = styled.img`
-width: 250px;
-height: 250px;
+width: 200px;
+height: 200px;
 border-radius: 10px;
 object-fit: cover;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 font-weight: bold;
-color: #000000;
 &:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
@@ -52,8 +47,8 @@ color: #000000;
 `;
 const GalleryText = styled.span`
 font-weight: bold; /* Make text bold */
-color: #000000; /* Make text black */
-display: block; /* Ensure text is on its own line */
+color: #e6be8a; /* Make text black */
+display: block; 
 margin-top: 10px; /* Add spacing above text */
 text-align: center; /* Center the text */
 `;
@@ -72,12 +67,8 @@ function Home() {
         <p>Providing the Best Garden Plants</p>
         <Gallery>
           <NavLink to="/plants">
-            <GalleryImg src="rhododendron.png" alt="Buske" /> <br />
-            <GalleryText>SEE PRODUCTS</GalleryText>
-          </NavLink>
-          <NavLink to="/resellers">
             <GalleryImg src="homepage.png" alt="Buske" /> <br />
-            <GalleryText>SEE Reseller</GalleryText>
+            <GalleryText>SEE PRODUCTS</GalleryText>
           </NavLink>
         </Gallery>
       </PageContainer>

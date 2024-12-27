@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import { useNavigate, useOutletContext } from 'react-router';
-import facade from '../util/apiFacade';
+import { useOutletContext } from 'react-router';
 
 const PageContainer = styled.div`
     position: relative;

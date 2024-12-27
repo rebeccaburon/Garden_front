@@ -1,14 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
-const DetailsContainer = styled.div`
-  padding: 20px;
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  max-width: 600px;
-  margin: 20px auto;
-`;
 
 const PlantImage = styled.img`
   max-width: 100%;
@@ -20,13 +13,19 @@ const PlantImage = styled.img`
 function ShowPlantDetails() {
   const location = useLocation();
   const { plant } = location.state || {};
+  const navigate = useNavigate ();
+  
 
   if (!plant) {
     return <p>No plant details available. Please select a plant first.</p>;
   }
 
+  const handleClickBack = () => {
+    navigate("/plants")
+  }
+
   return (
-    <DetailsContainer>
+    <div>
       <h2>Details for {plant.name}</h2>
       <table>
         <tbody>
@@ -42,20 +41,10 @@ function ShowPlantDetails() {
             <th>Price</th>
             <td>${plant.price}</td>
           </tr>
-          <tr>
-            <th>Image</th>
-            <td>
-              {plant.image ? (
-                <PlantImage src={plant.image} alt={plant.name} />
-              ) : (
-                "No image available"
-              )}
-            </td>
-          </tr>
         </tbody>
       </table>
-      <button>ADD TO BASKET</button>
-    </DetailsContainer>
+      <button className="login-button" onClick={handleClickBack}>BACK</button>
+    </div>
   );
 }
 
