@@ -1,5 +1,5 @@
 import { NavLink, useOutletContext } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
@@ -26,12 +26,36 @@ const DetailsContainer = styled.div`
   margin: 20px auto;
 `;
 
+const ErrorBanner = styled.div`
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  text-align: center;
+`;
+
 function ShowAllPlants() {
   const { plants } = useOutletContext();
+  const [errorMessage, setErrorMessage] = useState(null);
   const [selectedType, setSelectedType] = useState("All");
   const [selectedPlant, setSelectedPlant] = useState(null);
   const navigate = useNavigate ();
   const plantTypes = ["All", "Flower", "Rose", "Bush", "Rhododendron", "Herb"];
+
+   // Reset error message on route changes
+   useEffect(() => {
+    setErrorMessage(null);
+  }, [location]);
+
+
+  
+  // Check if no plants are available
+  useEffect(() => {
+    if (!plants || plants.length === 0) {
+      setErrorMessage("No plants in stock. Please try again later.");
+    }
+  }, [plants]);
 
   const sortedPlants =
     selectedType === "All"
@@ -52,6 +76,14 @@ function ShowAllPlants() {
 
   return (
     <div>
+      {errorMessage && (
+        <ErrorBanner>
+          <p>{errorMessage}</p>
+        </ErrorBanner>
+      )}
+
+      {!errorMessage && (
+        <>
       <div>
         <Select id="planttype" value={selectedType} onChange={handleChange}>
           {plantTypes.map((type) => (
@@ -88,11 +120,13 @@ function ShowAllPlants() {
           </div>
         </DetailsContainer>
       )}
+      </>
+    )}
+    
       <div>
       <button className="login-button" onClick = {handleClickBack}>BACK </button>
       </div>
     </div>
-  
   );
 }
 

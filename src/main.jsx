@@ -6,6 +6,7 @@ import Home from './pages/Home.jsx'
 import Plants from './pages/Plants.jsx'
 import Plant from './pages/Plant.jsx'
 import Login from './login_logout/Login.jsx'
+import Error404NotFound from "./errors/Error404NotFound.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
@@ -13,6 +14,8 @@ const router = createBrowserRouter(
       <Route path="/plants" element={<Plants/>} />
       <Route path="/plant" element={<Plant/>} />
       <Route path='/login' element={<Login/>} />
+      <Route path ="*" element={<Error404NotFound/>}/>
+
     </Route>
   )
 );
